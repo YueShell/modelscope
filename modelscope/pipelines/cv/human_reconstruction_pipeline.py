@@ -99,9 +99,9 @@ class HumanReconstructionPipeline(Pipeline):
             color[left:right] = rgb.T
         vert_min = np.min(verts[:, 1])
         verts[:, 1] = verts[:, 1] - vert_min
-        save_obj_mesh('human_reconstruction.obj', verts, faces)
-        save_obj_mesh_with_color('human_color.obj', verts, faces,
-                                 color.numpy())
+        # save_obj_mesh('human_reconstruction.obj', verts, faces)
+        # save_obj_mesh_with_color('human_color.obj', verts, faces,
+        #                          color.numpy())
         results = {'vertices': verts, 'faces': faces, 'colors': color.numpy()}
         return {OutputKeys.OUTPUT: results}
 
